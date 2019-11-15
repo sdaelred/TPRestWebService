@@ -48,7 +48,9 @@ public class CarRentalController {
 	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.GET) 
 	@ResponseStatus(HttpStatus.OK) 
 	@ResponseBody
-	public Car aCar(@PathVariable("plateNumber") String plateNumber) throws Exception{ return null; }
+	public Car aCar(@PathVariable("plateNumber") String plateNumber) throws Exception{ 
+		return null;//new Car(plateNumber, "Ferrari", 1000);
+	}
 	
 	@RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.DELETE) 
 	@ResponseStatus(HttpStatus.OK) 
