@@ -1,5 +1,7 @@
 package fr.efrei.TPRestWebService;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,6 +9,13 @@ public class Car {
 	
 	@Id
 	private long id;
+	private String plateNumber;
+	private String brand;
+	private int price;
+	private boolean isRented;
+	private int numberOfSeat;
+	private String begin;
+	
 	public long getId() {
 		return id;
 	}
@@ -14,12 +23,24 @@ public class Car {
 	public void setId(long id) {
 		this.id = id;
 	}
+	
+	public String getBegin() {
+		return begin;
+	}
 
-	private String plateNumber;
-	private String brand;
-	private int price;
-	private boolean isRented;
-	private int numberOfSeat;
+	public void setBegin(String begin) {
+		this.begin = begin;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
+
+	private String end;
 	
 	public int getNumberOfSeat() {
 		return numberOfSeat;
