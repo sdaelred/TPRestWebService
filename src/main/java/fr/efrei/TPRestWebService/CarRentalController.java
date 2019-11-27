@@ -21,9 +21,11 @@ public class CarRentalController {
 	private List<Car> cars = new ArrayList<Car>();
 	
 	public CarRentalController() {
-		cars.add(new Car("11AA22", "Ferrari", 1000));
-		cars.add(new Car("33BB44", "Porshe", 2222));
+		cars.add(new Car("11AA22", "Ferrari", 2, 1000, false));
+		cars.add(new Car("33BB44", "Porshe", 2, 2222, false));
 	}
+	
+	
 	
 	@RequestMapping(value="/cars", method=RequestMethod.GET) 
 	@ResponseStatus(HttpStatus.OK) 

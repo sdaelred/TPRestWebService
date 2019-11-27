@@ -1,11 +1,11 @@
 package fr.efrei.TPRestWebService;
 
+import javax.persistence.*;
 
-
-//@Entity
+@Entity
 public class Car {
 	
-	//@Id
+	@Id
 	private long id;
 	public long getId() {
 		return id;
@@ -18,16 +18,36 @@ public class Car {
 	private String plateNumber;
 	private String brand;
 	private int price;
+	private boolean isRented;
+	private int numberOfSeat;
 	
+	public int getNumberOfSeat() {
+		return numberOfSeat;
+	}
+
+	public void setNumberOfSeat(int numberOfSeat) {
+		this.numberOfSeat = numberOfSeat;
+	}
+
+	public boolean isRented() {
+		return isRented;
+	}
+
+	public void setRented(boolean isRented) {
+		this.isRented = isRented;
+	}
+
 	public Car() {
 		super();
 	}
 	
-	public Car(String plateNumber, String brand, int price) {
+	public Car(String plateNumber, String brand, int numberOfSeat, int price, boolean isRented) {
 		super();
 		this.plateNumber = plateNumber;
 		this.brand = brand;
 		this.price = price;
+		this.numberOfSeat = numberOfSeat;
+		this.isRented = isRented;
 	}
 	
 	public String getPlateNumber() {
@@ -56,7 +76,7 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return "Car [plateNumber=" + plateNumber + ", brand=" + brand + ", price=" + price + "]";
+		return "Car [plateNumber=" + plateNumber + ", brand=" + brand + ", numberOfSeat=" + numberOfSeat + ", price=" + price + "]";
 	}
 
 }
